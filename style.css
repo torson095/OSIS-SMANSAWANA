@@ -1,0 +1,51 @@
+/* Reset dasar agar margin konsisten di semua browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mengatur latar belakang halaman dan memusatkan konten */
+body {
+    background-color: white; /* Latar belakang hitam sesuai gambar */
+    min-height: 100vh;      /* Memastikan body setidaknya setinggi layar */
+    display: flex;
+    justify-content: center; /* Memusatkan secara horizontal */
+    align-items: center;     /* Memusatkan secara vertikal */
+    padding: 20px;           /* Padding agar tidak menempel ke tepi layar */
+}
+.card-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 100%;
+}
+
+.id-card {
+    background-color: #fff;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    transition: transform 250ms ease-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        gap: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        max-width: 1fr;
+    }
+}
+
+.id-card > img {
+    height: 100%;
+    width: 100%;
+    border-radius: 13px;
+}
+
+.id-card:hover {
+    transform: scale(1.1);
+}
